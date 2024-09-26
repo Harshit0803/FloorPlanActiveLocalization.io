@@ -34,11 +34,66 @@
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <!-- Custom CSS to make the dots grey -->
+  <style>
+    /* Change the color of the carousel dots */
+    .slider-pagination .slider-page {
+      background-color: grey !important;
+    }
+  </style>
+
+  <style>
+    /* Ensure that only one video is visible at a time */
+    #examples-carousel {
+      overflow: hidden; /* Prevent next video from peeking */
+      width: 100%;      /* Make sure the carousel takes full width */
+    }
+
+    #examples-carousel .item {
+      width: 100%;      /* Ensure each carousel item (video) takes full width */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+
+  <style>
+    /* Ensure that only one video is visible at a time */
+    #drift-carousel {
+      overflow: hidden; /* Prevent next video from peeking */
+      width: 100%;      /* Make sure the carousel takes full width */
+    }
+
+    #drift-carousel .item {
+      width: 100%;      /* Ensure each carousel item (video) takes full width */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+
+  <style>
+    /* Ensure that only one video is visible at a time */
+    #loop-carousel {
+      overflow: hidden; /* Prevent next video from peeking */
+      width: 100%;      /* Make sure the carousel takes full width */
+    }
+
+    #loop-carousel .item {
+      width: 100%;      /* Ensure each carousel item (video) takes full width */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -126,19 +181,19 @@
   </div>
 </section>
 
-<!-- Examples Video Section with Grey Background -->
+<!-- Examples Video Section with Slider -->
 <section class="hero is-light is-small teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <div class="columns is-centered">
+  <div class="hero-body">
+    <div class="container">
+      <div id="examples-carousel" class="carousel">
         <!-- First video -->
-        <div class="column is-two-thirds">
+        <div class="item">
           <video id="example-1" autoplay muted loop playsinline style="width: 100%; height: auto;">
             <source src="./static/videos/example1.mp4" type="video/mp4">
           </video>
         </div>
         <!-- Second video -->
-        <div class="column is-two-thirds">
+        <div class="item">
           <video id="example-2" autoplay muted loop playsinline style="width: 100%; height: auto;">
             <source src="./static/videos/example2.mp4" type="video/mp4">
           </video>
@@ -150,7 +205,6 @@
     </div>
   </div>
 </section>
-<!-- /Examples Video Section -->
 
 <!-- Active vs Passive Video Section with Grey Background -->
 <section class="hero is-light is-small">
@@ -274,48 +328,72 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-
     <div class="columns is-centered">
 
-      <!-- Drift Correction. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Drift Correction</h2>
-          <p>
-            Given a hypothesis for the agent's origin, its current pose is derived from noisy 
-            visual-inertial odometry. To mitigate the resulting drift, our strategy involves 
-            aligning the agent's locally observed 2D point cloud with the corresponding 
-            section of the floor plan.
-          </p>
-          <video id="drift-correction" autoplay muted loop playsinline height="100%">
-            <source src="./static/videos/drift_correction.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Drift Correction. -->
-
-      <!-- Loop Closure on Reversal. -->
-      <div class="column">
-        <h2 class="title is-3">Loop Closure on Reversal</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              Along with the floor plan based drift correction, using loop closures in 
-              SLAM to correct drift further improves performance. ICP algorithm is utilized 
-              to align the instantaneous point cloud from the depth image.
-            </p>
-            <video id="loop-closure" autoplay muted loop playsinline height="100%">
-              <source src="./static/videos/loop_closure.mp4"
-                      type="video/mp4">
+      <!-- First Column: Drift Correction Carousel -->
+      <div class="column is-half">
+        <h2 class="title is-3 has-text-centered">Drift Correction</h2>
+        <!-- Add description below the title -->
+        <p class="has-text-justified">
+          Given a hypothesis for the agent's origin, its current pose is derived from noisy 
+          visual-inertial odometry. To mitigate the resulting drift, our strategy involves 
+          aligning the agent's locally observed 2D point cloud with the corresponding 
+          section of the floor plan.        
+        </p>
+        <div id="drift-carousel" class="carousel">
+          
+          <!-- Drift Correction Video Slide -->
+          <div class="item">
+            <video id="drift-correction" autoplay muted loop playsinline style="width: 100%; max-height: 500px;">
+              <source src="./static/videos/drift_correction.mp4" type="video/mp4">
             </video>
+          </div>
+          
+          <!-- Drift Correction Image Slide -->
+          <div class="item">
+            <figure class="image">
+              <img src="./static/images/drift_comp.png" alt="Drift Correction Diagram" style="display: block; margin: 0 auto; width: 100%; height: auto; max-height: 600px;">
+            </figure>
           </div>
 
         </div>
       </div>
-    </div>
-    <!--/ Loop Closure on Reversal. -->
+      <!--/ First Column: Drift Correction Carousel -->
 
+      <!-- Second Column: Loop Closure Carousel -->
+      <div class="column is-half">
+        <h2 class="title is-3 has-text-centered">Loop Closure on Reversal</h2>
+        <!-- Add description below the title -->
+        <p class="has-text-justified">
+          Along with the floor plan based drift correction, using loop closures in 
+          SLAM to correct drift further improves performance. ICP algorithm is utilized 
+          to align the instantaneous point cloud from the depth image. 
+        </p>
+        <div id="loop-carousel" class="carousel">
+
+          <!-- Loop Closure Video Slide -->
+          <div class="item">
+            <video id="loop-closure" autoplay muted loop playsinline style="width: 100%; max-height: 500px;">
+              <source src="./static/videos/loop_closure.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- Loop Closure Image Slide -->
+          <div class="item">
+            <figure class="image">
+              <img src="./static/images/with_loop_closure_comp.png" alt="Loop Closure Diagram" style="display: block; margin: 0 auto; width: 100%; height: auto; max-height: 500px;">
+            </figure>
+          </div>
+
+        </div>
+      </div>
+      <!--/ Second Column: Loop Closure Carousel -->
+
+    </div>
+  </div>
+</section>
+
+<section>
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
@@ -379,7 +457,6 @@
       </div>
     </div>
     <!--/ Animation. -->
-  </div>
 </section>
 
 
@@ -417,6 +494,29 @@
     </div>
   </div>
 </footer>
+<!-- Bulma Carousel JS -->
+<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.5/dist/js/bulma-carousel.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    bulmaCarousel.attach('#examples-carousel', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      loop: true
+    });
+    // Initialize Drift Correction Carousel
+    bulmaCarousel.attach('#drift-carousel', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      loop: true
+    });
 
+    // Initialize Loop Closure Carousel
+    bulmaCarousel.attach('#loop-carousel', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      loop: true
+    });
+  });
+</script>
 </body>
 </html>
