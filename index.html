@@ -93,7 +93,53 @@
       align-items: center;
     }
   </style>
+  <style>
+    /* Ensure that only one video is visible at a time */
+    #other-methods-carousel {
+      overflow: hidden; /* Prevent next video from peeking */
+      width: 100%;      /* Make sure the carousel takes full width */
+    }
 
+    #other-methods-carousel .item {
+      width: 100%;      /* Ensure each carousel item (video) takes full width */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <style>
+    /* Ensure that only one item (video or image) is visible at a time */
+    #active-passive-carousel {
+      overflow: hidden; /* Prevent next item from peeking */
+      width: 100%;      /* Ensure the carousel takes full width */
+    }
+
+    #active-passive-carousel .item {
+      width: 100%;      /* Ensure each carousel item (video or image) takes full width */
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Ensure image takes full width and height like the video */
+    #active-passive-carousel .item img {
+      object-fit: fill;/* Ensure the image scales without stretching */
+    }
+  </style>
+  <style>
+    /* Remove margin and padding between sections */
+    .section {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  
+    /* Remove margin from the Metrics section */
+    .section + .section {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -206,15 +252,27 @@
   </div>
 </section>
 
-<!-- Active vs Passive Video Section with Grey Background -->
+<!-- Active vs Passive Video/Image Section with Grey Background -->
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container" style="max-width: 90%; width: 90%;">
       <div class="has-text-centered">
-        <!-- Single video -->
-        <video id="active-passive-comp" autoplay muted loop playsinline style="width: 100%; height: auto;">
-          <source src="./static/videos/active_passive_comp.mp4" type="video/mp4">
-        </video>
+        <!-- Carousel for Video and Image -->
+        <div id="active-passive-carousel" class="carousel">
+          <!-- Video Slide -->
+          <div class="item">
+            <video id="active-passive-comp" autoplay muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./static/videos/active_passive_comp.mp4" type="video/mp4">
+            </video>
+          </div>
+          <!-- Image Slide -->
+          <div class="item">
+            <figure class="image">
+              <img src="./static/images/active_passive_comp.png" alt="Active vs Passive Localization Image" style="width: 100%;">
+            </figure>
+          </div>
+        </div>
+        <!-- Caption Below Carousel -->
         <h2 class="subtitle has-text-centered" style="margin-top: 15px;">
           Demonstrating active vs passive localization systems.
         </h2>
@@ -222,7 +280,7 @@
     </div>
   </div>
 </section>
-<!-- /Active vs Passive Video Section -->
+<!-- /Active vs Passive Video/Image Section -->
 
 <!-- Flow Chart Section with Background only on relevant parts -->
 <section class="section" style="padding-bottom: 1rem;">
@@ -390,75 +448,122 @@
       <!--/ Second Column: Loop Closure Carousel -->
 
     </div>
-  </div>
-</section>
 
-<section>
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+    <!-- Other Methods Comparison -->
+    <div class="section">
+      <h2 class="title is-3 has-text-centered">Comparison between our method vs AMCL and FSD</h2> <!-- Centered Title -->
+      <div id="other-methods-carousel" class="carousel">
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
+        <!-- First Video Slide -->
+        <div class="item">
+          <video id="methods-comp-1" autoplay muted loop playsinline style="width: 2500px; height: 880px;">
+            <source src="./static/videos/methods_comp1.mp4" type="video/mp4">
           </video>
         </div>
-        <!--/ Re-rendering. -->
+        
+        <!-- Second Video Slide -->
+        <div class="item">
+          <video id="methods-comp-2" autoplay muted loop playsinline style="width: 2500px; height: 880px;">
+            <source src="./static/videos/methods_comp2.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- Third Slide: Both Images Stacked Vertically -->
+        <div class="item">
+          <div class="columns is-centered" style="width: 100%; flex-direction: column;">
+
+            <!-- First Image -->
+            <div class="column">
+              <figure class="image">
+                <figcaption class="has-text-centered" style="font-weight: bold; padding-bottom: 10px;">Environment 1</figcaption>
+                <img src="./static/images/methods_comp_1.png" alt="Comparison Image 1" style="width: 100%; height: auto; max-height: 500px;">
+              </figure>
+            </div>
+
+            <!-- Horizontal Separator (Optional) -->
+            <div class="column is-narrow">
+              <hr style="border-top: 1px solid #ccc; width: 100%;">
+            </div>
+
+            <!-- Second Image -->
+            <div class="column">
+              <figure class="image">
+                <figcaption class="has-text-centered" style="font-weight: bold; padding-bottom: 10px;">Environment 4</figcaption>
+                <img src="./static/images/methods_comp_2.png" alt="Comparison Image 2" style="width: 100%; height: auto; max-height: 500px;">
+              </figure>
+            </div>
+
+          </div>
+        </div>
 
       </div>
     </div>
-    <!--/ Animation. -->
+    <!--/ Other Methods Comparison -->
+
+  </div>
 </section>
 
+<!-- Metrics Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Metrics</h2> <!-- Centered Title -->
+
+    <div class="columns is-centered" style="align-items: center;">
+      
+      <!-- First Image (Left, Right-Aligned) -->
+      <div class="column is-half" style="display: flex; justify-content: flex-end;">
+        <figure class="image">
+          <img src="./static/images/result_comp_1.png" alt="Metrics Image 1" style="width: 80%; margin: 0 auto;">
+        </figure>
+      </div>
+
+      <!-- Vertical Separator -->
+      <div class="column is-narrow">
+        <div style="width: 1px; height: 200px; background-color: #ccc;"></div>
+      </div>
+
+      <!-- Second Image (Right, Left-Aligned) -->
+      <div class="column is-half" style="display: flex; justify-content: flex-start;">
+        <figure class="image">
+          <img src="./static/images/result_comp_2.png" alt="Metrics Image 2" style="width: 80%; margin: 0 auto;">
+        </figure>
+      </div>
+
+    </div>
+
+    <!-- Horizontal Line Divider -->
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <hr style="border-top: 1px solid #ccc; margin: 10px 0;">
+      </div>
+    </div>
+
+    <!-- Add another set of two images side by side -->
+    <div class="columns is-centered" style="align-items: center;">
+      
+      <!-- Third Image (Left, Right-Aligned) -->
+      <div class="column is-half" style="display: flex; justify-content: flex-end;">
+        <figure class="image">
+          <img src="./static/images/result_drift_loop_1.png" alt="Metrics Image 3" style="width: 80%; margin: 0 auto;">
+        </figure>
+      </div>
+
+      <!-- Vertical Separator -->
+      <div class="column is-narrow">
+        <div style="width: 1px; height: 200px; background-color: #ccc;"></div>
+      </div>
+
+      <!-- Fourth Image (Right, Left-Aligned) -->
+      <div class="column is-half" style="display: flex; justify-content: flex-start;">
+        <figure class="image">
+          <img src="./static/images/result_drift_loop_2.png" alt="Metrics Image 4" style="width: 80%; margin: 0 auto;">
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Metrics Section -->
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -512,6 +617,18 @@
 
     // Initialize Loop Closure Carousel
     bulmaCarousel.attach('#loop-carousel', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      loop: true
+    });
+
+    bulmaCarousel.attach('#other-methods-carousel', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      loop: true
+    });
+
+    bulmaCarousel.attach('#active-passive-carousel', {
       slidesToScroll: 1,
       slidesToShow: 1,
       loop: true
