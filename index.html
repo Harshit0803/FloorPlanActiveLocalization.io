@@ -117,15 +117,6 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
             </div>
 
           </div>
@@ -135,90 +126,77 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- Examples Video Section with Grey Background -->
+<section class="hero is-light is-small teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
+      <div class="columns is-centered">
+        <!-- First video -->
+        <div class="column is-two-thirds">
+          <video id="example-1" autoplay muted loop playsinline style="width: 100%; height: auto;">
+            <source src="./static/videos/example1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- Second video -->
+        <div class="column is-two-thirds">
+          <video id="example-2" autoplay muted loop playsinline style="width: 100%; height: auto;">
+            <source src="./static/videos/example2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        Navigation assistance for visually impaired individuals.
       </h2>
     </div>
   </div>
 </section>
+<!-- /Examples Video Section -->
 
-
+<!-- Active vs Passive Video Section with Grey Background -->
 <section class="hero is-light is-small">
   <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+    <div class="container" style="max-width: 90%; width: 90%;">
+      <div class="has-text-centered">
+        <!-- Single video -->
+        <video id="active-passive-comp" autoplay muted loop playsinline style="width: 100%; height: auto;">
+          <source src="./static/videos/active_passive_comp.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered" style="margin-top: 15px;">
+          Demonstrating active vs passive localization systems.
+        </h2>
       </div>
     </div>
   </div>
 </section>
+<!-- /Active vs Passive Video Section -->
 
-<!-- Flow Chart Section -->
-<div class="container is-max-desktop has-text-centered">
-  <figure class="image">
-    <img src="./static/images/flow2.png" alt="Description of image">
-  </figure>
-</div>
-<!-- Flow Chart Section -->
+<!-- Flow Chart Section with Background only on relevant parts -->
+<section class="section" style="padding-bottom: 1rem;">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths has-text-centered">
+      <h2 class="title is-3">Overview of proposed algorithm</h2>
 
+      <!-- Flow Chart with Background -->
+      <section class="hero is-light is-small">
+        <div class="hero-body">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <figure class="image" style="width: 95%; height: auto;">
+                <img src="./static/images/flow_chart.png" alt="Flow chart illustrating the process" style="width: 100%; height: auto;">
+                <figcaption style="margin-top: 15px;">The 2D semantic point cloud generated during the agent's motion is used to create localization hypotheses (particle filter) for the agent's start location.
+                  The agent's current location, estimated using drift-corrected odometry, is used to give real-time local targets. Once localized, the agent is navigated to the desired final destination.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--/ Flow Chart with Background -->
 
-<section class="section">
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 1rem;">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -263,6 +241,22 @@
     </div>
     <!--/ Abstract. -->
 
+    <!-- Contributions. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Primary Contributions</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li>Semantics-driven <em>active</em> global localization leveraging architectural floor plans and stereo-inertial sensors.</li>
+            <li>A dynamic approach for correcting the agent's time-varying odometry drift utilizing the floor plan, independent of prior knowledge of the agent's initial pose.</li>
+            <li>Implementation of loop closure for reversal through the application of ICP and Bundle Adjustment techniques.</li>
+            <li>Development of an efficient, real-time semantic end-to-end system designed to facilitate navigation assistance for persons with blindness and low vision.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Contributions. -->
+
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -283,33 +277,36 @@
 
     <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
+      <!-- Drift Correction. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-3">Drift Correction</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            Given a hypothesis for the agent's origin, its current pose is derived from noisy 
+            visual-inertial odometry. To mitigate the resulting drift, our strategy involves 
+            aligning the agent's locally observed 2D point cloud with the corresponding 
+            section of the floor plan.
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
+          <video id="drift-correction" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/drift_correction.mp4"
                     type="video/mp4">
           </video>
         </div>
       </div>
-      <!--/ Visual Effects. -->
+      <!--/ Drift Correction. -->
 
-      <!-- Matting. -->
+      <!-- Loop Closure on Reversal. -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
+        <h2 class="title is-3">Loop Closure on Reversal</h2>
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
+              Along with the floor plan based drift correction, using loop closures in 
+              SLAM to correct drift further improves performance. ICP algorithm is utilized 
+              to align the instantaneous point cloud from the depth image.
             </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
+            <video id="loop-closure" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/loop_closure.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -317,7 +314,7 @@
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
+    <!--/ Loop Closure on Reversal. -->
 
     <!-- Animation. -->
     <div class="columns is-centered">
