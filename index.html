@@ -42,46 +42,6 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
 
 <section class="hero">
   <div class="hero-body">
@@ -91,29 +51,29 @@
           <h1 class="title is-1 publication-title">Floor Plan Based Active Global Localization and Navigation Aid for Persons with Blindness and Low Visions</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">R. G. Goswami</a><sup>1</sup>,</span>
+              <a href="https://github.com/raktimgg">R. G. Goswami</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">P. V. Amith</a><sup>2</sup>,</span>
+              <a href="https://github.com/venkataPalacherla">P. V. Amith</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">J. Hari</a><sup>2</sup>,
+              <a href="https://github.com/jagennath-hari">J. Hari</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">H. Sinha</a><sup>2</sup>,
+              <a href="hs4851@nyu.edu">H. Sinha</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">P. Krishnamurthy</a><sup>2</sup>,
+              <a href="https://scholar.google.com/citations?user=W-_zgGgAAAAJ">P. Krishnamurthy</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">J. Rizzo</a><sup>1,2</sup>,
+              <a href="https://med.nyu.edu/faculty/johnross-rizzo">J. Rizzo</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">F. Khorrami</a><sup>2</sup>
+              <a href="https://scholar.google.com/citations?user=NdOqlPQAAAAJ&hl=en">F. Khorrami</a><sup>1</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>Control/Robotics Research Laboratory (CRRL), Department of Electrical and Computer Engineering, NYU Tandon School of Engineering</span>
+            <span class="author-block"><sup>2</sup>Rusk Institute of Rehabilitation, New York University Grossman School of Medicine</span>
           </div>
 
           <div class="column has-text-centered">
@@ -258,31 +218,37 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Navigation of an agent, such as a person with blindness or low vision, 
+            in an unfamiliar environment poses substantial difficulties, 
+            even in scenarios where prior maps, like floor plans, are available. 
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            It becomes essential first to determine the agent's pose in the environment. 
+            The task's complexity increases when the agent also needs directions for exploring 
+            the environment to reduce uncertainty in the agent's position. 
+            This problem of <em>active global localization</em> typically involves finding a transformation 
+            to match the agent's sensor-generated map to the floor plan while providing a series of 
+            point-to-point directions for effective exploration.
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Current methods fall into two categories: learning-based, requiring extensive training 
+            for each environment, or non-learning-based, which generally depend on prior knowledge 
+            of the agent's initial position, or the use of floor plan maps created with the same 
+            sensor modality as the agent.
+          </p>
+          <p>
+            Addressing these limitations, we introduce a novel system for real-time, 
+            active global localization and navigation for persons with blindness and low vision.
+          </p>
+          <p>
+            By generating semantically informed real-time goals, our approach enables local exploration 
+            and the creation of a 2D semantic point cloud for effective global localization. Moreover, 
+            it dynamically corrects for odometry drift using the architectural floor plan, independent 
+            of the agent's global position and introduces a new method for real-time loop closure on reversal.
+          </p>
+          <p>
+            Our approach's effectiveness is validated through multiple real-world indoor experiments, 
+            also highlighting its adaptability and ease of extension to any mobile robot.
           </p>
         </div>
       </div>
@@ -408,35 +374,6 @@
       </div>
     </div>
     <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
   </div>
 </section>
 
@@ -444,45 +381,24 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{global2024localization,
+  author    = {Goswami, R.G. and Amith, P.V. and Hari, J. and Sinha, H. and Krishnamurthy, P. and Rizzo, J. and Tzes, A. and Khorrami, F.},
+  title     = {Floor Plan Based Active Global Localization and Navigation Aid for Persons with Blindness and Low Visions},
+  journal   = {IEEE Robotics and Automation Letters},
+  year      = {2024},
 }</code></pre>
   </div>
 </section>
 
-
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
-        </div>
+      <div class="columns is-centered">
+          <div class="content">
+              <p>
+                  The template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+              </p>
+          </div>
       </div>
-    </div>
   </div>
 </footer>
 
