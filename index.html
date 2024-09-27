@@ -334,32 +334,22 @@
             Navigation of an agent, such as a person with blindness or low vision, 
             in an unfamiliar environment poses substantial difficulties, 
             even in scenarios where prior maps, like floor plans, are available. 
-          </p>
-          <p>
             It becomes essential first to determine the agent's pose in the environment. 
             The task's complexity increases when the agent also needs directions for exploring 
             the environment to reduce uncertainty in the agent's position. 
             This problem of <em>active global localization</em> typically involves finding a transformation 
             to match the agent's sensor-generated map to the floor plan while providing a series of 
             point-to-point directions for effective exploration.
-          </p>
-          <p>
             Current methods fall into two categories: learning-based, requiring extensive training 
             for each environment, or non-learning-based, which generally depend on prior knowledge 
             of the agent's initial position, or the use of floor plan maps created with the same 
             sensor modality as the agent.
-          </p>
-          <p>
             Addressing these limitations, we introduce a novel system for real-time, 
             active global localization and navigation for persons with blindness and low vision.
-          </p>
-          <p>
             By generating semantically informed real-time goals, our approach enables local exploration 
             and the creation of a 2D semantic point cloud for effective global localization. Moreover, 
             it dynamically corrects for odometry drift using the architectural floor plan, independent 
             of the agent's global position and introduces a new method for real-time loop closure on reversal.
-          </p>
-          <p>
             Our approach's effectiveness is validated through multiple real-world indoor experiments, 
             also highlighting its adaptability and ease of extension to any mobile robot.
           </p>
