@@ -140,6 +140,21 @@
       padding-top: 0;
     }
   </style>
+
+  <style>
+    /* Ensure that only one video is visible at a time */
+    #metrics-carousel {
+      overflow: hidden; /* Prevent next video from peeking */
+      width: 100%;      /* Make sure the carousel takes full width */
+    }
+
+    #metrics-carousel .item {
+      width: 100%;      /* Ensure each carousel item (video) takes full width */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
 
@@ -508,7 +523,7 @@
 <!-- Metrics Section -->
 <section class="section">
   <div class="container">
-    <h2 class="title is-3 has-text-centered">Metrics</h2> <!-- Centered Title -->
+    <h2 class="title is-3 has-text-centered">Quantitative results</h2> <!-- Centered Title -->
 
     <div class="columns is-centered" style="align-items: center;">
       
@@ -563,6 +578,84 @@
       </div>
 
     </div>
+
+    <!-- Carousel Section -->
+    <div class="section">
+      <h2 class="title is-3 has-text-centered">Demonstrating Our Method On Different Environments</h2>
+      <div id="metrics-carousel" class="carousel">
+        
+        <!-- First Slide -->
+        <div class="item">
+          <div class="columns is-centered" style="flex-direction: column;">
+
+            <!-- First Image in the Slide -->
+            <div class="column">
+              <figure class="image">
+                <img src="./static/images/basement_heat_rewards.png" alt="Slide 1 Image 1" 
+                    style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
+              </figure>
+            </div>
+
+            <!-- Second Image in the Slide -->
+            <div class="column">
+              <figure class="image">
+                <img src="./static/images/table_env1.png" alt="Slide 1 Image 2" 
+                    style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
+              </figure>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Second Slide -->
+        <div class="item">
+          <div class="columns is-centered" style="flex-direction: column;">
+
+            <!-- First Image in the Slide -->
+            <div class="column">
+              <figure class="image">
+                <img src="./static/images/2nd_fl_heat_rewards.png" alt="Slide 2 Image 1" 
+                    style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
+              </figure>
+            </div>
+
+            <!-- Second Image in the Slide -->
+            <div class="column">
+              <figure class="image">
+                <img src="./static/images/table_env2.png" alt="Slide 2 Image 2" 
+                    style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
+              </figure>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Third Slide -->
+        <div class="item">
+          <div class="columns is-centered" style="flex-direction: column;">
+
+            <!-- First Image in the Slide -->
+            <div class="column">
+              <figure class="image">
+                <img src="./static/images/6mtc_floorplan.png" alt="Slide 3 Image 1" 
+                    style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
+              </figure>
+            </div>
+
+            <!-- Second Image in the Slide -->
+            <div class="column">
+              <figure class="image">
+                <img src="./static/images/table_env3.png" alt="Slide 3 Image 2" 
+                    style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
+              </figure>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Carousel Section -->
   </div>
 </section>
 <!-- Metrics Section -->
@@ -631,6 +724,12 @@
     });
 
     bulmaCarousel.attach('#active-passive-carousel', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      loop: true
+    });
+
+    bulmaCarousel.attach('#metrics-carousel', {
       slidesToScroll: 1,
       slidesToShow: 1,
       loop: true
