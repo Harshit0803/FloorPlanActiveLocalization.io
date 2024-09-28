@@ -122,9 +122,11 @@
       align-items: center;
     }
 
-    /* Ensure image takes full width and height like the video */
+    /* Manually set image width and height */
     #active-passive-carousel .item img {
-      object-fit: fill;/* Ensure the image scales without stretching */
+      width: 2000px;  /* Set desired width (adjust as needed) */
+      height: 2000px;  /* Set desired height (adjust as needed) */
+      object-fit: none; /* Disable object-fit behavior */
     }
   </style>
   <style>
@@ -283,7 +285,7 @@
           <!-- Image Slide -->
           <div class="item">
             <figure class="image">
-              <img src="./static/images/active_passive_comp.png" alt="Active vs Passive Localization Image" style="width: 100%;">
+              <img src="./static/images/active_passive_comp.png" alt="Active vs Passive Localization Image" style="width: 1000px !important; height: 500px !important; object-fit: none;">
             </figure>
           </div>
         </div>
@@ -463,40 +465,35 @@
 
         <!-- First Video Slide -->
         <div class="item">
-          <video id="methods-comp-1" autoplay muted loop playsinline style="width: 2500px; height: 880px;">
+          <video id="methods-comp-1" autoplay muted loop playsinline style="width: 2500px; height: 780px;">
             <source src="./static/videos/methods_comp1.mp4" type="video/mp4">
           </video>
         </div>
         
         <!-- Second Video Slide -->
         <div class="item">
-          <video id="methods-comp-2" autoplay muted loop playsinline style="width: 2500px; height: 880px;">
+          <video id="methods-comp-2" autoplay muted loop playsinline style="width: 2500px; height: 780px;">
             <source src="./static/videos/methods_comp2.mp4" type="video/mp4">
           </video>
         </div>
 
         <!-- Third Slide: Both Images Stacked Vertically -->
         <div class="item">
-          <div class="columns is-centered" style="width: 100%; flex-direction: column;">
+          <div class="columns is-centered" style="width: 100%; flex-direction: column; max-height: 400px; justify-content: center; align-items: center;">
 
             <!-- First Image -->
-            <div class="column">
+            <div style="padding-top: 400px;"> <!-- Add padding for space before the image -->
               <figure class="image">
                 <figcaption class="has-text-centered" style="font-weight: bold; padding-bottom: 10px;">Environment 1</figcaption>
-                <img src="./static/images/methods_comp_1.png" alt="Comparison Image 1" style="width: 100%; height: auto; max-height: 500px;">
+                <img src="./static/images/methods_comp_1.png" alt="Comparison Image 1" style="width: 100%; height: auto; max-height: 400px;">
               </figure>
-            </div>
-
-            <!-- Horizontal Separator (Optional) -->
-            <div class="column is-narrow">
-              <hr style="border-top: 1px solid #ccc; width: 100%;">
             </div>
 
             <!-- Second Image -->
             <div class="column">
               <figure class="image">
                 <figcaption class="has-text-centered" style="font-weight: bold; padding-bottom: 10px;">Environment 4</figcaption>
-                <img src="./static/images/methods_comp_2.png" alt="Comparison Image 2" style="width: 100%; height: auto; max-height: 500px;">
+                <img src="./static/images/methods_comp_2.png" alt="Comparison Image 2" style="width: 100%; height: auto; max-height: 400px;">
               </figure>
             </div>
 
@@ -513,7 +510,7 @@
 <!-- Metrics Section -->
 <section class="section">
   <div class="container">
-    <h2 class="title is-3 has-text-centered">Quantitative results</h2> <!-- Centered Title -->
+    <h2 class="title is-3 has-text-centered">Quantitative Results</h2> <!-- Centered Title -->
 
     <div class="columns is-centered" style="align-items: center;">
       
