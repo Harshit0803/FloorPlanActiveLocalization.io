@@ -121,13 +121,6 @@
       justify-content: center;
       align-items: center;
     }
-
-    /* Manually set image width and height */
-    #active-passive-carousel .item img {
-      width: 2000px;  /* Set desired width (adjust as needed) */
-      height: 2000px;  /* Set desired height (adjust as needed) */
-      object-fit: none; /* Disable object-fit behavior */
-    }
   </style>
   <style>
     /* Remove margin and padding between sections */
@@ -276,19 +269,37 @@
       <div class="has-text-centered">
         <!-- Carousel for Video and Image -->
         <div id="active-passive-carousel" class="carousel">
+          
           <!-- Video Slide -->
           <div class="item">
             <video id="active-passive-comp" autoplay muted loop playsinline style="width: 100%; height: auto;">
               <source src="./static/videos/active_passive_comp.mp4" type="video/mp4">
             </video>
           </div>
-          <!-- Image Slide -->
+          
+          <!-- Image Slide with two images side by side -->
           <div class="item">
-            <figure class="image">
-              <img src="./static/images/active_passive_comp.png" alt="Active vs Passive Localization Image" style="width: 1000px !important; height: 500px !important; object-fit: none;">
-            </figure>
+            <div class="columns is-centered">
+              
+              <!-- First Image (Left) -->
+              <div class="column">
+                <figure class="image">
+                  <img src="./static/images/active_loc.png" alt="Active Localization Image" style="width: 500px; height: 550px; object-fit: fill;">
+                </figure>
+              </div>
+              
+              <!-- Second Image (Right) -->
+              <div class="column">
+                <figure class="image">
+                  <img src="./static/images/passive_loc.png" alt="Passive Localization Image" style="width: 500px; height: 550px; object-fit: fill;">
+                </figure>
+              </div>
+
+            </div>
           </div>
+          
         </div>
+
         <!-- Caption Below Carousel -->
         <h2 class="subtitle has-text-centered" style="margin-top: 15px;">
           Demonstrating active vs passive localization systems.
@@ -535,61 +546,71 @@
 <!-- Metrics Section -->
 <section class="section">
   <div class="container">
-    <h2 class="title is-3 has-text-centered">Quantitative Results</h2> <!-- Centered Title -->
+    <h2 class="title is-3 has-text-centered" style="margin-top: 40px;">Quantitative Results</h2> <!-- Centered Title -->
 
-    <div class="columns is-centered" style="align-items: center;">
-      
-      <!-- First Image (Left, Right-Aligned) -->
-      <div class="column is-half" style="display: flex; justify-content: flex-end;">
-        <figure class="image">
-          <img src="./static/images/result_comp_1.png" alt="Metrics Image 1" style="width: 80%; margin: 0 auto;">
-        </figure>
+    <!-- Hero Section for Quantitative Results Images -->
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+
+          <div class="columns is-centered" style="align-items: center;">
+            
+            <!-- First Image (Left, Right-Aligned) -->
+            <div class="column is-half" style="display: flex; justify-content: flex-end;">
+              <figure class="image">
+                <img src="./static/images/result_comp_1.png" alt="Metrics Image 1" style="width: 400px; height: 200px; margin: 0 auto;">
+              </figure>
+            </div>
+
+            <!-- Vertical Separator -->
+            <div class="column is-narrow">
+              <div style="width: 1px; height: 200px; background-color: #ccc;"></div>
+            </div>
+
+            <!-- Second Image (Right, Left-Aligned) -->
+            <div class="column is-half" style="display: flex; justify-content: flex-start;">
+              <figure class="image">
+                <img src="./static/images/result_comp_2.png" alt="Metrics Image 2" style="width: 400px; height: 200px; margin: 0 auto;">
+              </figure>
+            </div>
+
+          </div>
+
+          <!-- Horizontal Line Divider -->
+          <div class="columns is-centered">
+            <div class="column is-full">
+              <hr style="border-top: 1px solid #ccc; margin: 10px 0;">
+            </div>
+          </div>
+
+          <!-- Add another set of two images side by side -->
+          <div class="columns is-centered" style="align-items: center;">
+            
+            <!-- Third Image (Left, Right-Aligned) -->
+            <div class="column is-half" style="display: flex; justify-content: flex-end;">
+              <figure class="image">
+                <img src="./static/images/result_drift_loop_1.png" alt="Metrics Image 3" style="width: 400px; height: 200px; margin: 0 auto;">
+              </figure>
+            </div>
+
+            <!-- Vertical Separator -->
+            <div class="column is-narrow">
+              <div style="width: 1px; height: 200px; background-color: #ccc;"></div>
+            </div>
+
+            <!-- Fourth Image (Right, Left-Aligned) -->
+            <div class="column is-half" style="display: flex; justify-content: flex-start;">
+              <figure class="image">
+                <img src="./static/images/result_drift_loop_2.png" alt="Metrics Image 4" style="width: 400px; height: 200px; margin: 0 auto;">
+              </figure>
+            </div>
+
+          </div>
+
+        </div>
       </div>
-
-      <!-- Vertical Separator -->
-      <div class="column is-narrow">
-        <div style="width: 1px; height: 200px; background-color: #ccc;"></div>
-      </div>
-
-      <!-- Second Image (Right, Left-Aligned) -->
-      <div class="column is-half" style="display: flex; justify-content: flex-start;">
-        <figure class="image">
-          <img src="./static/images/result_comp_2.png" alt="Metrics Image 2" style="width: 80%; margin: 0 auto;">
-        </figure>
-      </div>
-
-    </div>
-
-    <!-- Horizontal Line Divider -->
-    <div class="columns is-centered">
-      <div class="column is-full">
-        <hr style="border-top: 1px solid #ccc; margin: 10px 0;">
-      </div>
-    </div>
-
-    <!-- Add another set of two images side by side -->
-    <div class="columns is-centered" style="align-items: center;">
-      
-      <!-- Third Image (Left, Right-Aligned) -->
-      <div class="column is-half" style="display: flex; justify-content: flex-end;">
-        <figure class="image">
-          <img src="./static/images/result_drift_loop_1.png" alt="Metrics Image 3" style="width: 80%; margin: 0 auto;">
-        </figure>
-      </div>
-
-      <!-- Vertical Separator -->
-      <div class="column is-narrow">
-        <div style="width: 1px; height: 200px; background-color: #ccc;"></div>
-      </div>
-
-      <!-- Fourth Image (Right, Left-Aligned) -->
-      <div class="column is-half" style="display: flex; justify-content: flex-start;">
-        <figure class="image">
-          <img src="./static/images/result_drift_loop_2.png" alt="Metrics Image 4" style="width: 80%; margin: 0 auto;">
-        </figure>
-      </div>
-
-    </div>
+    </section>
+    <!-- End of Hero Section for Quantitative Results Images -->
 
     <!-- Carousel Section -->
     <div class="section">
