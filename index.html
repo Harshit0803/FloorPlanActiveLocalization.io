@@ -138,12 +138,12 @@
 
   <style>
     /* Ensure that only one video is visible at a time */
-    #metrics-carousel {
+    #table-carousel {
       overflow: hidden; /* Prevent next video from peeking */
       width: 100%;      /* Make sure the carousel takes full width */
     }
 
-    #metrics-carousel .item {
+    #table-carousel .item {
       width: 100%;      /* Ensure each carousel item (video) takes full width */
       display: flex;
       justify-content: center;
@@ -169,7 +169,7 @@
               <a href="https://github.com/jagennath-hari">J. Hari</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="hs4851@nyu.edu">H. Sinha</a><sup>1</sup>,
+              <a href="https://www.linkedin.com/in/harshitsinha08/">H. Sinha</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=W-_zgGgAAAAJ">P. Krishnamurthy</a><sup>1</sup>,
@@ -612,83 +612,97 @@
     </section>
     <!-- End of Hero Section for Quantitative Results Images -->
 
-    <!-- Carousel Section -->
+    <!-- Images Section: Three Images Side by Side with Title -->
     <div class="section">
       <h2 class="title is-3 has-text-centered">Demonstrating Our Method On Different Environments</h2>
-      <div id="metrics-carousel" class="carousel">
-        
-        <!-- First Slide -->
-        <div class="item">
-          <div class="columns is-centered" style="flex-direction: column;">
 
-            <!-- First Image in the Slide -->
-            <div class="column">
-              <figure class="image">
-                <img src="./static/images/basement_heat_rewards.png" alt="Slide 1 Image 1" 
-                    style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
-              </figure>
+      <!-- Hero Section for Grey Background without the Title Inside -->
+      <section class="hero is-light is-small">
+        <div class="hero-body">
+          <div class="container">
+
+            <!-- Three Images Side by Side -->
+            <div class="columns is-centered" style="align-items: center;">
+              
+              <!-- First Image (Left) -->
+              <div class="column">
+                <figure class="image">
+                  <figcaption class="has-text-centered" style="font-weight: bold; margin-bottom: 10px; margin-left: 50px;">Environment 1</figcaption>
+                  <img src="./static/images/basement_heat_rewards.png" alt="Environment 1" 
+                      style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
+                </figure>
+              </div>
+
+              <!-- Second Image (Center) -->
+              <div class="column">
+                <figure class="image">
+                  <figcaption class="has-text-centered" style="font-weight: bold; margin-bottom: 10px; margin-left: 30px;">Environment 2</figcaption>
+                  <img src="./static/images/2nd_fl_heat_rewards.png" alt="Environment 2" 
+                      style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
+                </figure>
+              </div>
+
+              <!-- Third Image (Right) -->
+              <div class="column">
+                <figure class="image">
+                  <figcaption class="has-text-centered" style="font-weight: bold; margin-bottom: 10px;">Environment 3</figcaption>
+                  <img src="./static/images/6mtc_floorplan.png" alt="Environment 3" 
+                      style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
+                </figure>
+              </div>
+
             </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of Hero Section for Images -->
 
-            <!-- Second Image in the Slide -->
-            <div class="column">
-              <figure class="image">
-                <img src="./static/images/table_env1.png" alt="Slide 1 Image 2" 
-                    style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
-              </figure>
+      <!-- Carousel Section -->
+      <section class="hero is-light is-small">
+        <div class="hero-body">
+          <div class="container">
+
+            <div id="table-carousel" class="carousel">
+              
+              <!-- First Slide: One Image -->
+              <div class="item">
+                <figure class="image">
+                  <img src="./static/images/table_env1.png" alt="Slide 1 Image" 
+                      style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
+                </figure>
+              </div>
+              
+              <!-- Second Slide: Two Images Stacked Vertically -->
+              <div class="item">
+                <div class="columns is-centered" style="flex-direction: column;">
+
+                  <!-- First Image in the Slide (Top) -->
+                  <div class="column">
+                    <figure class="image" style="margin-bottom: -30px;">
+                      <img src="./static/images/table_env2.png" alt="Slide 2 Top Image" 
+                          style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
+                    </figure>
+                  </div>
+
+                  <!-- Second Image in the Slide (Bottom) -->
+                  <div class="column">
+                    <figure class="image">
+                      <img src="./static/images/table_env3.png" alt="Slide 2 Bottom Image" 
+                          style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
+                    </figure>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
 
           </div>
         </div>
-
-        <!-- Second Slide -->
-        <div class="item">
-          <div class="columns is-centered" style="flex-direction: column;">
-
-            <!-- First Image in the Slide -->
-            <div class="column">
-              <figure class="image">
-                <img src="./static/images/2nd_fl_heat_rewards.png" alt="Slide 2 Image 1" 
-                    style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
-              </figure>
-            </div>
-
-            <!-- Second Image in the Slide -->
-            <div class="column">
-              <figure class="image">
-                <img src="./static/images/table_env2.png" alt="Slide 2 Image 2" 
-                    style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
-              </figure>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Third Slide -->
-        <div class="item">
-          <div class="columns is-centered" style="flex-direction: column;">
-
-            <!-- First Image in the Slide -->
-            <div class="column">
-              <figure class="image">
-                <img src="./static/images/6mtc_floorplan.png" alt="Slide 3 Image 1" 
-                    style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
-              </figure>
-            </div>
-
-            <!-- Second Image in the Slide -->
-            <div class="column">
-              <figure class="image">
-                <img src="./static/images/table_env3.png" alt="Slide 3 Image 2" 
-                    style="width: 100%; max-width: 1000px; height: auto; max-height: 400px;">
-              </figure>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
+      </section>
+      <!-- End of Hero Section for Carousel -->
     </div>
-    <!--/ Carousel Section -->
+    <!-- End of Images Section -->
   </div>
 </section>
 <!-- Metrics Section -->
@@ -762,7 +776,7 @@
       loop: true
     });
 
-    bulmaCarousel.attach('#metrics-carousel', {
+    bulmaCarousel.attach('#table-carousel', {
       slidesToScroll: 1,
       slidesToShow: 1,
       loop: true
