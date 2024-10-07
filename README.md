@@ -5,7 +5,7 @@ This is the repository that contains source code for the [Floor Plan Active Loca
 If you find this useful for your work please cite:
 ```
 @article{global2024localization,
-  author    = {Goswami, R.G. and Amith, P.V. and Hari, J. and Sinha, H. and Krishnamurthy, P. and Rizzo, J. and Tzes, A. and Khorrami, F.},
+  author    = {Goswami, R.G. and Sinha, H. and Amith, P.V. and Hari, J. and Krishnamurthy, P. and Rizzo, J. and Tzes, A. and Khorrami, F.},
   title     = {Floor Plan Based Active Global Localization and Navigation Aid for Persons with Blindness and Low Visions},
   journal   = {IEEE Robotics and Automation Letters},
   year      = {2024},
