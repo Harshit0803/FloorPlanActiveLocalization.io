@@ -7,7 +7,7 @@ If you find this useful for your work please cite:
 @article{global2024localization,
   author    = {Goswami, R.G. and Sinha, H. and Amith, P.V. and Hari, J. and Krishnamurthy, P. and Rizzo, J. and Tzes, A. and Khorrami, F.},
   title     = {Floor Plan Based Active Global Localization and Navigation Aid for Persons with Blindness and Low Visions},
-  journal   = {IEEE Robotics and Automation Letters},
+  journal   = {IEEE Robotics and Automation Letters (RA-L)},
   year      = {2024},
 }
 ```
